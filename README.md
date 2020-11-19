@@ -1,7 +1,7 @@
-**Introduction**
+# Introduction
 The goal while writing this particular web crawler to crawl and extract all pokemons released yet along with basic information such as their types(some have dual typing)and pokedex entry numbers.
 This data can later be used to find pokemons which are strong or weak against each other based on type.
-**Methodology**
+# Methodology
 Before begining the scraping it was important to understand the underlying structure of the webpage and to codify the information using xpaths for both understanding and telling the program what to look for while crawling. To understand the page structure, Chrome browser developer tools was used. After quickly glancing over the html structure the use of classes in the html tags was apparent, these classes are precise what enabled easy of crawling and extraction of the webpage. The following information is scraped from the page:
 1. Pokedex number
 2. Name of the Pokemon
@@ -37,3 +37,9 @@ then iterating over each table we look for all the table rows <tr> within said t
 Every row represent a particular pokemon and hence by accessing table data <td> of each <tr> we have the information that we need.
 Because we studied the structure of the table we know that name is stored in the Third <td> and so on.
 Once the data is extracted and saved in a dictionary we simply pass it to a dataframe we is then saved as a .csv file
+ ```
+cdata = {"number": number, "name": name, "type1": type_1, "type2":type_2}
+print(cdata)
+df = pd.DataFrame(data=cdata)
+df.to_csv("pokedex.csv", header=True, index=False)
+ ```
