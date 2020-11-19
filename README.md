@@ -1,5 +1,5 @@
 # Introduction
-The goal while writing this particular web crawler to crawl and extract all pokemons released yet along with basic information such as their types(some have dual typing)and pokedex entry numbers.
+The goal while writing this particular web crawler was to crawl and extract all pokemons released yet along with basic information such as their types(some have dual typing)and pokedex entry numbers.
 This data can later be used to find pokemons which are strong or weak against each other based on type.
 # Methodology
 Before begining the scraping it was important to understand the underlying structure of the webpage and to codify the information using xpaths for both understanding and telling the program what to look for while crawling. To understand the page structure, Chrome browser developer tools was used. After quickly glancing over the html structure the use of classes in the html tags was apparent, these classes are precise what enabled easy of crawling and extraction of the webpage. The following information is scraped from the page:
